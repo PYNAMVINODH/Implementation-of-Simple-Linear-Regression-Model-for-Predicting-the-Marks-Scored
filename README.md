@@ -19,50 +19,47 @@ To write a program to predict the marks scored by a student using the simple lin
 ```
 /*
 Program to implement the simple linear regression model for predicting the marks scored.
-Developed by: P.Jeshwanth Kumar
-RegisterNumber:  212223240114
+Developed by: PYNAM VINODH
+RegisterNumber:  212223240131
 import pandas as pd
 from sklearn import linear_model
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.metrics import mean_absolute_error,mean_squared_error
-df=pd.read_csv('student_scores.csv')
+from  sklearn.metrics import mean_absolute_error,mean_squared_error
+df=pd.read_csv("student_scores.csv")
+#displaying the content 
 print(df.head())
-print(df.tail())
 reg=linear_model.LinearRegression()
 x=df.iloc[:,:-1].values
 y=df.iloc[:,1].values
-print("X-Values",x)
-print("Y-Values",y)
+print(x)
+print(y)
 from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=1/3,random_state=0)
-reg=linear_model.LinearRegression()
-reg.fit(x_train,y_train)
-y_pred=reg.predict(x_test)
-print("Predicted values",y_pred)
-print("Tested values",y_test)
 */
 ```
 ## Output:
-![image](https://github.com/Jeshwanthkumarpayyavula/Implementation-of-Simple-Linear-Regression-Model-for-Predicting-the-Marks-Scored/assets/145742402/2259351e-6a9d-4a62-b0fd-ea854e84f168)
+![image](https://github.com/PYNAMVINODH/Implementation-of-Simple-Linear-Regression-Model-for-Predicting-the-Marks-Scored/assets/145742678/f8bbca6b-f95b-45f0-8725-c2fe1ea5ac5c)
+
 
 ```
-plt.scatter(x_train,y_train,color="blue")
-plt.plot(x_train,reg.predict(x_train),color="red")
-plt.title("Hours vs Scores (Training_Set)")
+plt.scatter(x_train,y_train,color="orange")
+plt.plot(x_train,regressor.predict(x_train),color="red")
+plt.title("Hours vs Scores (Training set)")
 plt.xlabel("Hours")
 plt.ylabel("Scores")
 plt.show()
 ```
 ## Output:
-![image](https://github.com/Jeshwanthkumarpayyavula/Implementation-of-Simple-Linear-Regression-Model-for-Predicting-the-Marks-Scored/assets/145742402/e9925c91-d8fc-4cbd-9b06-2b6d0c97234c)
+![image](https://github.com/PYNAMVINODH/Implementation-of-Simple-Linear-Regression-Model-for-Predicting-the-Marks-Scored/assets/145742678/34de95d4-86e0-4a55-92be-f4d962797636)
+
 
 
 
 ```
-plt.scatter(x_test,y_test,color="black")
-plt.plot(x_test,reg.predict(x_test),color="green")
-plt.title("Hours vs Scores (Testing_Set)")
+plt.scatter(x_test,y_test,color="red")
+plt.plot(x_test,regressor.predict(x_test),color="blue")
+plt.title("Hours vs Scores (testing set)")
 plt.xlabel("Hours")
 plt.ylabel("Scores")
 plt.show()
@@ -74,7 +71,8 @@ rmse=np.sqrt(mse)
 print('RMSE = ',rmse)
 ```
 ## Output:
-![image](https://github.com/Jeshwanthkumarpayyavula/Implementation-of-Simple-Linear-Regression-Model-for-Predicting-the-Marks-Scored/assets/145742402/9e10c01a-b7c2-4387-b0ef-bc9c0b0a3553)
+![image](https://github.com/PYNAMVINODH/Implementation-of-Simple-Linear-Regression-Model-for-Predicting-the-Marks-Scored/assets/145742678/b9f8eaba-35e7-4a09-8b78-e7ee98d2ec49)
+
 
 
 
